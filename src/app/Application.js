@@ -1,6 +1,6 @@
 import config from "../config";
 import EventEmitter from "eventemitter3";
-import StarWarsUniverse from "./custom/StarWarseUniverse";
+import StarWarsUniverse from "./custom/StarWarsUniverse";
 import { findPlanet, getFirst10People } from "./utils";
 
 const EVENTS = {
