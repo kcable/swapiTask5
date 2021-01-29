@@ -1,7 +1,7 @@
 /**
  * Here you can define helper functions to use across your app.
  */
-import Films from "./custom/Films";
+import Film from "./custom/Film";
 
 function delay(seconds) {
   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
@@ -38,7 +38,7 @@ function _onPersonBorn(object){
     console.log(object);
     object.filmUrls.forEach(element => {
         if(this.films.find(film => film.url === element) === undefined){
-            this.films.push(new Films(element));
+            this.films.push(new Film(element));
             this.emit("FILM_ADDED");
         }
     });
