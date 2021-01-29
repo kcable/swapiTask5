@@ -1,3 +1,4 @@
+# BOOST API IS DOWN THAT IS WHY IM USING SWAPI
 # ⚙ JavaScript Boilerplate
 This project is used as a boilerplate for tasks in the "JavaScript" course in Booost. It initializes a base application with a webpack dev server.
 
