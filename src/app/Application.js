@@ -1,8 +1,10 @@
-import config from '../config';
-import EventEmitter from 'eventemitter3';
+import config from "../config";
+import EventEmitter from "eventemitter3";
+import StarWarsUniverse from "./custom/StarWarseUniverse";
+import { findPlanet, getFirst10People } from "./utils";
 
 const EVENTS = {
-  APP_READY: 'app_ready',
+  APP_READY: "app_ready",
 };
 
 /**
@@ -31,8 +33,16 @@ export default class Application extends EventEmitter {
    */
   async init() {
     // Initiate classes and wait for async operations here.
-
+    this.data.universe = new StarWarsUniverse();
+    this.data.universe.on("UNIVERSE_POPULATED", ()=>{
+      console.log("it is done i guess");
+     
+    });
+    await this.data.universe.init();
+    this.data.universe.removeAllListeners();
+    
+    
+    
     this.emit(Application.events.APP_READY);
   }
 }
-
