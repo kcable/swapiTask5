@@ -31,7 +31,7 @@ export default class StarWarsUniverse extends EventEmitter {
       console.log(this.films);
       
     });
-    await planet.populate();
-    planet.removeAllListeners();
+     planet.populate();
+    //planet.removeAllListeners();
   }
 }

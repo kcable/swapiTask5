@@ -8,14 +8,14 @@ function delay(seconds) {
 }
 async function findPlanet() {
   const { count, results } = await (
-    await fetch(`https://swapi.dev/api/planets/`)
+    await fetch(`https://swapi.booost.bg/api/planets/`)
   ).json();
   const sumArr = [...results];
   const pages = count % 10 === 0 ? count / 10 : Math.floor(count / 10 + 1); // if count is not a number divisible by 10 add one more page
   // retriveing data from api
   for (let i = 2; i <= pages; i++) {
     const { results: newRes } = await (
-      await fetch(`https://swapi.dev/api/planets/?page=${i}`)
+      await fetch(`https://swapi.booost.bg/api/planets/?page=${i}`)
     ).json();
     sumArr.push(...newRes);
   }
@@ -27,7 +27,7 @@ async function getFirst10People() {
   const people = [];
   for (let i = 1; i <= 10; i++) {
     const person = await (
-      await fetch(`https://swapi.dev/api/people/${i}/`)
+      await fetch(`https://swapi.booost.bg/api/people/${i}/`)
     ).json();
     people.push(person);
   }
