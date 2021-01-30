@@ -34,7 +34,7 @@ export default class Planet extends EventEmitter {
       this.emit("PERSON_BORN", {
         filmUrls: this.peopleData[this.populationCount-1].films,
       });
-       await this.populate();
+        this.populate();
     } else {
       this.emit("POPULATING_COMPLETED");
     }

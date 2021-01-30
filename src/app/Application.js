@@ -39,7 +39,7 @@ export default class Application extends EventEmitter {
      
     });
     await this.data.universe.init();
-    this.data.universe.removeAllListeners();
+    //this.data.universe.removeAllListeners();
     
     
     
